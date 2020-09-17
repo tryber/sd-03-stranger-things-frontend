@@ -1,18 +1,22 @@
+require('dotenv/config');
 import React from 'react';
 import CharactersService from '../services/charactersAPI';
 
 const getRealityClass = (hereIsTheUpsideDownWorld) => (
   hereIsTheUpsideDownWorld ? 'upside-down' : 'stranger-things'
 );
-
+const url = process.env.REACT_APP_HAWKINS_URL;
+const timeout = process.env.REACT_APP_HAWKINS_TIMEOUT;
 const strangerThingsConfig = {
-  url: 'http://localhost:3002',
-  timeout: 30000,
+  url,
+  timeout,
 };
 
+const udUrl = process.env.REACT_APP_UPSIDEDOWN_URL;
+const udTimeout = process.env.REACT_APP_UPSIDEDOWN_TIMEOUT;
 const upsideDownConfig = {
-  url: 'http://localhost:3003',
-  timeout: 30000,
+  udUrl,
+  udTimeout,
 };
 
 const charactersService = new CharactersService(strangerThingsConfig);
