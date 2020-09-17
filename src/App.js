@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-
+// my strange frontend
 import StrangerThings from './components/StrangerThings';
 
 function App() {
