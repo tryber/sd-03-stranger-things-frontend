@@ -12,7 +12,6 @@ const strangerThingsConfig = {
   timeout,
 };
 
-const ENVIROMENT = process.env.ENVIROMENT;
 const udUrl = process.env.REACT_APP_UPSIDEDOWN_URL;
 const udTimeout = process.env.REACT_APP_UPSIDEDOWN_TIMEOUT;
 const upsideDownConfig = {
@@ -109,7 +108,7 @@ class StrangerThings extends React.Component {
           this.state.hereIsTheUpsideDownWorld
         )}`}
       >
-        {ENVIROMENT === 'prod' ? <h1>Em desenvolvimento</h1> : null}
+        {process.env.ENVIROMENT_TAG}
         <div className="content strangerfy">
           <div className="change-reality">
             <button onClick={this.changeRealityClick}>
