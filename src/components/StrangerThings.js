@@ -6,7 +6,7 @@ const {
   REACT_APP_HAWKINS_TIMEOUT = 30000,
   REACT_APP_UPSIDEDOWN_URL = 'http://localhost:3003',
   REACT_APP_UPSIDEDOWN_TIMEOUT = 30000,
-  DEV_ENV,
+  DEV_ENV = true,
 } = process.env;
 
 const getRealityClass = (hereIsTheUpsideDownWorld) =>
@@ -113,7 +113,7 @@ class StrangerThings extends React.Component {
       >
         <div className="content strangerfy">
           <div className="change-reality">
-            <div>{DEV_ENV ? <h4>{`Em desenvolvimento`}</h4> : null}</div>
+            <div>{DEV_ENV ? <h4>Em desenvolvimento</h4> : null}</div>
             <button onClick={this.changeRealityClick}>
               {' '}
               Mudar de Realidade
