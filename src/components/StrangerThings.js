@@ -104,7 +104,7 @@ class StrangerThings extends React.Component {
           this.state.hereIsTheUpsideDownWorld
         )}`}
       >
-        <span>{process.env.ENVIRONMENT}</span>
+        <span>{process.env.ENVIRONMENT_TAG}</span>
         <div className="content strangerfy">
           <div className="change-reality">
             <button onClick={this.changeRealityClick}>
