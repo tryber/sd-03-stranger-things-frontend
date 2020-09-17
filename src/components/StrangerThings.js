@@ -6,7 +6,7 @@ const {
   REACT_APP_HAWKINS_TIMEOUT = 30000,
   REACT_APP_UPSIDEDOWN_URL = 'http://localhost:3003',
   REACT_APP_UPSIDEDOWN_TIMEOUT = 30000,
-  REACT_APP_DEV_ENV,
+  REACT_APP_DEV_ENV = false,
 } = process.env;
 
 const getRealityClass = (hereIsTheUpsideDownWorld) =>
