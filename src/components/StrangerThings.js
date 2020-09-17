@@ -8,7 +8,7 @@ const {
   REACT_APP_UPSIDEDOWN_TIMEOUT,
   ENV,
 } = process.env;
-
+console.log(ENV)
 const getRealityClass = (hereIsTheUpsideDownWorld) => (
   hereIsTheUpsideDownWorld ? 'upside-down' : 'stranger-things'
 );
