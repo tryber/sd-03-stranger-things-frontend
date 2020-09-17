@@ -6,11 +6,11 @@ const {
   REACT_APP_HAWKINS_TIMEOUT = 30000,
   REACT_APP_UPSIDEDOWN_URL = 'http://localhost:3003',
   REACT_APP_UPSIDEDOWN_TIMEOUT = 30000,
+  DEV_ENV,
 } = process.env;
 
-const getRealityClass = (hereIsTheUpsideDownWorld) => (
-  hereIsTheUpsideDownWorld ? 'upside-down' : 'stranger-things'
-);
+const getRealityClass = (hereIsTheUpsideDownWorld) =>
+  hereIsTheUpsideDownWorld ? 'upside-down' : 'stranger-things';
 
 const strangerThingsConfig = {
   url: REACT_APP_HAWKINS_URL,
@@ -64,7 +64,7 @@ class StrangerThings extends React.Component {
       {
         page: 1,
       },
-      this.searchCharacter(1)
+      this.searchCharacter(1),
     );
   }
 
@@ -89,7 +89,7 @@ class StrangerThings extends React.Component {
       {
         page: this.state.page + 1,
       },
-      () => this.searchCharacter()
+      () => this.searchCharacter(),
     );
   }
 
@@ -100,7 +100,7 @@ class StrangerThings extends React.Component {
       {
         page: this.state.page - 1,
       },
-      () => this.searchCharacter()
+      () => this.searchCharacter(),
     );
   }
 
@@ -108,11 +108,12 @@ class StrangerThings extends React.Component {
     return (
       <div
         className={`reality ${getRealityClass(
-          this.state.hereIsTheUpsideDownWorld
+          this.state.hereIsTheUpsideDownWorld,
         )}`}
       >
         <div className="content strangerfy">
           <div className="change-reality">
+            <div>{DEV_ENV ? <h4>{`Em desenvolvimento`}</h4> : null}</div>
             <button onClick={this.changeRealityClick}>
               {' '}
               Mudar de Realidade
