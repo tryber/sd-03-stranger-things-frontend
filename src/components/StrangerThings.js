@@ -1,18 +1,26 @@
 import React from 'react';
 import CharactersService from '../services/charactersAPI';
 
+const {
+  REACT_APP_HAWKINS_URL,
+  REACT_APP_HAWKINS_TIMEOUT,
+  REACT_APP_UPSIDEDOWN_URL,
+  REACT_APP_UPSIDEDOWN_TIMEOUT,
+  REACT_APP_ENVIROMENT,
+} = process.env;
+
 const getRealityClass = (hereIsTheUpsideDownWorld) => (
   hereIsTheUpsideDownWorld ? 'upside-down' : 'stranger-things'
 );
 
 const strangerThingsConfig = {
-  url: 'http://localhost:3002',
-  timeout: 30000,
+  url: REACT_APP_HAWKINS_URL,
+  timeout: REACT_APP_HAWKINS_TIMEOUT,
 };
 
 const upsideDownConfig = {
-  url: 'http://localhost:3003',
-  timeout: 30000,
+  url: REACT_APP_UPSIDEDOWN_URL,
+  timeout: REACT_APP_UPSIDEDOWN_TIMEOUT,
 };
 
 const charactersService = new CharactersService(strangerThingsConfig);
@@ -53,12 +61,10 @@ class StrangerThings extends React.Component {
   }
 
   searchClick() {
-    this.setState(
-      {
-        page: 1,
-      },
-      this.searchCharacter(1)
-    );
+    const { hereIsTheUpsideDownWorld } = this.state;
+    const { url } = hereIsTheUpsideDownWorld ? strangerThingsConfig : upsideDownConfig;
+    console.log(url);
+    fetch(url).then(() => this.setState({ page: 1 }, this.searchCharacter(1)));
   }
 
   searchCharacter(page) {
@@ -105,6 +111,7 @@ class StrangerThings extends React.Component {
         )}`}
       >
         <div className="content strangerfy">
+        {REACT_APP_ENVIROMENT === 'desenvolvimento' && <h1>Em desenvolvimento</h1>}
           <div className="change-reality">
             <button onClick={this.changeRealityClick}>
               {' '}
