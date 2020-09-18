@@ -30,7 +30,6 @@ const charactersUpsideDownService = new CharactersService(upsideDownConfig);
 class StrangerThings extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       hereIsTheUpsideDownWorld: false,
       characterName: '',
