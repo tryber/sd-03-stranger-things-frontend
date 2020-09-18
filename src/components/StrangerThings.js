@@ -146,11 +146,13 @@ class StrangerThings extends React.Component {
             <p>Página atual: {this.state.page}</p>
           </div>
           <div>
+            <h4>em desenvolvimento</h4>
+          </div>
+          <div>
             <button onClick={this.previousPage}>Anterior</button>
             <button onClick={this.nextPage}>Próximo</button>
           </div>
         </div>
-        {/* <h1>{process.env.DEV_ENV === 'true' ? 'Em desenvolvimento' : null}</h1> */}
       </div>
     );
   }
