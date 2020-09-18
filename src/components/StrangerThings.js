@@ -1,6 +1,6 @@
 import React from 'react';
-require('dotenv').config();
 import CharactersService from '../services/charactersAPI';
+require('dotenv').config();
 
 const getRealityClass = (hereIsTheUpsideDownWorld) =>
   hereIsTheUpsideDownWorld ? 'upside-down' : 'stranger-things';
