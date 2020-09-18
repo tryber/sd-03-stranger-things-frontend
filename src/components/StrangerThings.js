@@ -1,9 +1,9 @@
 import React from 'react';
 import CharactersService from '../services/charactersAPI';
+require('dotenv').config();
 
-const getRealityClass = (hereIsTheUpsideDownWorld) => (
-  hereIsTheUpsideDownWorld ? 'upside-down' : 'stranger-things'
-);
+const getRealityClass = (hereIsTheUpsideDownWorld) =>
+  hereIsTheUpsideDownWorld ? 'upside-down' : 'stranger-things';
 
 const strangerThingsConfig = {
   url: process.env.REACT_APP_HAWKINS_URL,
@@ -17,6 +17,9 @@ const upsideDownConfig = {
 
 const charactersService = new CharactersService(strangerThingsConfig);
 const charactersUpsideDownService = new CharactersService(upsideDownConfig);
+const teste = {tes: process.env.REACT_DEV_ENV};
+console.log(teste);
+console.log(upsideDownConfig.url);
 
 class StrangerThings extends React.Component {
   constructor(props) {
@@ -104,8 +107,8 @@ class StrangerThings extends React.Component {
           this.state.hereIsTheUpsideDownWorld
         )}`}
       >
-        <div className="content strangerfy">
-          <div className="change-reality">
+        <div className='content strangerfy'>
+          <div className='change-reality'>
             <button onClick={this.changeRealityClick}>
               {' '}
               Mudar de Realidade
@@ -114,7 +117,7 @@ class StrangerThings extends React.Component {
 
           <div>
             <input
-              placeholder="Nome do Personagem"
+              placeholder='Nome do Personagem'
               onChange={this.handleInput}
               value={this.state.characterName}
             />
@@ -150,6 +153,7 @@ class StrangerThings extends React.Component {
             <button onClick={this.nextPage}>Próximo</button>
           </div>
         </div>
+        {/* <h1>{process.env.DEV_ENV === 'true' ? 'Em desenvolvimento' : null}</h1> */}
       </div>
     );
   }
