@@ -1,18 +1,23 @@
 import React from 'react';
+require('dotenv').config();
 import CharactersService from '../services/charactersAPI';
 
-const getRealityClass = (hereIsTheUpsideDownWorld) => (
-  hereIsTheUpsideDownWorld ? 'upside-down' : 'stranger-things'
-);
+const getRealityClass = (hereIsTheUpsideDownWorld) =>
+  hereIsTheUpsideDownWorld ? 'upside-down' : 'stranger-things';
+
+const URL_HAWKINS = process.env.REACT_APP_HAWKINS_URL;
+const TIMEOUT_HAWKINS = process.env.REACT_APP_HAWKINS_TIMEOUT;
+const URL_UPSIDEDOWN = process.env.REACT_APP_UPSIDEDOWN_URL;
+const TIMEOUT_UPSIDEDOWN = process.env.REACT_APP_UPSIDEDOWN_TIMEOUT;
 
 const strangerThingsConfig = {
-  url: 'http://localhost:3002',
-  timeout: 30000,
+  url: URL_HAWKINS,
+  timeout: TIMEOUT_HAWKINS,
 };
 
 const upsideDownConfig = {
-  url: 'http://localhost:3003',
-  timeout: 30000,
+  url: URL_UPSIDEDOWN,
+  timeout: TIMEOUT_UPSIDEDOWN,
 };
 
 const charactersService = new CharactersService(strangerThingsConfig);
@@ -99,17 +104,10 @@ class StrangerThings extends React.Component {
 
   render() {
     return (
-      <div
-        className={`reality ${getRealityClass(
-          this.state.hereIsTheUpsideDownWorld
-        )}`}
-      >
+      <div className={`reality ${getRealityClass(this.state.hereIsTheUpsideDownWorld)}`}>
         <div className="content strangerfy">
           <div className="change-reality">
-            <button onClick={this.changeRealityClick}>
-              {' '}
-              Mudar de Realidade
-            </button>
+            <button onClick={this.changeRealityClick}> Mudar de Realidade</button>
           </div>
 
           <div>
