@@ -13,7 +13,7 @@ const strangerThingsConfig = {
 
 const upsideDownConfig = {
   url: process.env.REACT_APP_UPSIDEDOWN_URL,
-  timeout: process.env.EACT_APP_UPSIDEDOWN_TIMEOUT,
+  timeout: process.env.REACT_APP_UPSIDEDOWN_TIMEOUT,
 };
 
 const charactersService = new CharactersService(strangerThingsConfig);
@@ -105,6 +105,7 @@ class StrangerThings extends React.Component {
           this.state.hereIsTheUpsideDownWorld
         )}`}
       >
+        {process.env.REACT_APP_DEVELOPMENT_MODE === 'true' && <span>Em desenvolvimento</span>}
         <div className="content strangerfy">
           <div className="change-reality">
             <button onClick={this.changeRealityClick}>
@@ -157,3 +158,4 @@ class StrangerThings extends React.Component {
 }
 
 export default StrangerThings;
+
