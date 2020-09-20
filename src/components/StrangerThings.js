@@ -51,7 +51,6 @@ class StrangerThings extends React.Component {
         isDevelopment:false
       });}
     }
-  }
 
   changeRealityClick() {
     this.setState({
