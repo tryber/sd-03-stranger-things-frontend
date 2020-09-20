@@ -1,4 +1,4 @@
-{
+{ "engines" : { "node" : ">=0.12" },
   "name": "stranger-things-client",
   "version": "0.1.0",
   "private": true,
@@ -43,4 +43,5 @@
     "mochawesome-merge": "^4.0.0",
     "mochawesome-report-generator": "^4.1.0"
   }
+  
 }
