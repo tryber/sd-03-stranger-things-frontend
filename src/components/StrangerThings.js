@@ -28,6 +28,7 @@ class StrangerThings extends React.Component {
       characterName: '',
       characters: [],
       page: 1,
+      isDevelopment:true,
     };
 
     this.handleInput = this.handleInput.bind(this);
@@ -38,6 +39,18 @@ class StrangerThings extends React.Component {
 
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
+  }
+
+  componentDidMount() {
+    if(process.env.DEVELOPMENT_MODE) {
+    this.setState({
+      isDevelopment:true
+    });}
+    if(!process.env.DEVELOPMENT_MODE) {
+      this.setState({
+        isDevelopment:false
+      });}
+    }
   }
 
   changeRealityClick() {
