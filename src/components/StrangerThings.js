@@ -1,6 +1,6 @@
 import React from 'react';
 import CharactersService from '../services/charactersAPI';
-import 'dotenv/config'
+require('dotenv').config();
 
 const isDevelopment = process.env.REACT_APP_DEVELOPMENT;
 
@@ -109,6 +109,7 @@ class StrangerThings extends React.Component {
       >
         <div className="content strangerfy">
           <div className="change-reality">
+            {console.log('isDevelopment:', isDevelopment)}
             {(isDevelopment === 'true') && <h1>Em desenvolvimento</h1>}
             <button onClick={this.changeRealityClick}>
               {' '}
