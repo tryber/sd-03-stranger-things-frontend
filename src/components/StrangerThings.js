@@ -1,5 +1,6 @@
 import React from 'react';
 import CharactersService from '../services/charactersAPI';
+require('dotenv').config();
 
 const {
   REACT_APP_HAWKINS_URL,
