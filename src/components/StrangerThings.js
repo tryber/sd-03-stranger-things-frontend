@@ -42,11 +42,11 @@ class StrangerThings extends React.Component {
   }
 
   componentDidMount() {
-    if(process.env.REACT_APP_DEVELOPMENT_MODE === true) {
+    if(process.env.REACT_APP_DEVELOPMENT_MODE === "true") {
     this.setState({
       isDevelopment:true
     });}
-    if(process.env.REACT_APP_DEVELOPMENT_MODE === false) {
+    if(process.env.REACT_APP_DEVELOPMENT_MODE === "false") {
       this.setState({
         isDevelopment:false
       });}
