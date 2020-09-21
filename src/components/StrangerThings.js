@@ -114,6 +114,7 @@ class StrangerThings extends React.Component {
         )}`}
       >
           <h2>{AMBIENT === 'dev' && 'Em desenvolvimento'}</h2>
+          {console.log(AMBIENT)}
         <div className="content strangerfy">
           <div className="change-reality">
             <button onClick={this.changeRealityClick}>
