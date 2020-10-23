@@ -7,7 +7,6 @@ class CharactersService {
       timeout,
     });
   }
-
   async getCharacters(name, page, size) {
     const params = {
       page,
