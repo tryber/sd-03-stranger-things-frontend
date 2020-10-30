@@ -8,3 +8,4 @@ Aqui você vai encontrar os locais para colocar suas repostas relativas aos requ
 
 **Nota**: Este direcionamento está presente no [repositório](https://github.com/tryber/sd-03-stranger-things) em que os requisitos do projeto são destrinchados.
 
+..
